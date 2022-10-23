@@ -1,0 +1,96 @@
+@font-face {
+  font-family: 'Vulf Mono';
+  font-weight: lighter;
+  font-style: italic;
+  src: url('fonts/Vulf_Mono-Light_Italic_web.woff2') format('woff2'),
+       url('fonts/Vulf_Mono-Light_Italic_web.woff') format('woff'),
+       url('fonts/Vulf_Mono-Light_Italic_web.ttf')  format('truetype');
+}
+
+@font-face {
+  font-family: 'Vulf Mono';
+  font-weight: bold;
+  font-style: italic;
+  src: url('fonts/Vulf_Mono-Bold_Italic_web.woff2') format('woff2'),
+       url('fonts/Vulf_Mono-Bold_Italic_web.woff') format('woff'),
+       url('fonts/Vulf_Mono-Bold_Italic_web.ttf')  format('truetype');
+}
+
+body {
+  text-align: center;
+  font-family: 'Vulf Mono';
+  font-style: italic;
+  margin: 0;
+  color: #fff;
+
+  /* Day */
+  background-color: #fff;
+}
+
+#tower {
+  position: relative;
+  width: 100%;
+  height: 133vw;
+  min-height: 175vh;
+
+  /* Day */
+  background-image: url('day.webp');
+  background-size:     cover;
+  background-repeat:   no-repeat;
+  background-position: top center;
+}
+
+.dove {
+  position: absolute;
+  width: 0px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #0c0e0e;
+  }
+
+  #tower {
+    background-image: url('night.webp');
+  }
+}
+
+h1 {
+  top: 0;
+  width: 100%;
+  font-size: 100px;
+  position: absolute;
+  text-shadow: 0.08em 0.08em 0 #25506B;
+}
+
+div.postcard {
+  margin: 20px auto;
+  /*background-color: #fff;*/
+  padding: 20px;
+  line-height: 1;
+  font-weight: lighter;
+  font-size: 20px;
+
+  background-image: url('postcard.webp');
+  background-size: cover;
+  height: 248px;
+  width: 450px;
+  color: #224;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img.addr-dove {
+  position: relative;
+  left: -30px;
+  width: 100px;
+  margin: -12px;
+}
+
+span {
+  line-height: 2em;
+  font-weight: bold;
+  text-decoration: underline;
+}

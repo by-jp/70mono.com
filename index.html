@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>70 Mono</title>
+  <link rel="stylesheet" href="mono.css">
+</head>
+<body>
+  <div id="tower">
+    <img class="dove" src="dove.svg"/>
+    <img class="dove" src="dove.svg"/>
+    <img class="dove" src="dove.svg"/>
+  </div>
+  <h1>70 Mono</h1>
+  <div class="postcard">
+    <img class="addr-dove" src="dove.svg"/>
+    <p>
+      <span>JP & Yvette</span>
+    </p>
+  </div>
+
+  <script>
+    const doc = document.documentElement
+    const doves = document.getElementsByClassName('dove')
+    const tower = document.getElementById('tower')
+    window.onscroll = function() {
+      const homeY = 0.484022556 * tower.offsetHeight
+      const minScroll = Math.max(0, homeY - doc.clientHeight)
+      const maxScroll = homeY
+      const scroll = Math.max(0, Math.min(1, (doc.scrollTop - minScroll) / (maxScroll - minScroll)))
+
+      for (let i = 0; i < doves.length; i++) {
+        const sizeOffset = (scroll * (100 - (2 - i)*15))
+        doves[i].style.width = sizeOffset.toString()+"px"
+        const xOffset = 1 - (scroll * (1 + (0.2 * i)))
+        doves[i].style.left = `calc(31.5625%*${xOffset} - ${sizeOffset}px/2)`
+        const yOffset = (i - 1)* 5 * scroll
+        doves[i].style.top = `calc(48.4022556% + ${yOffset}% - ${sizeOffset}px/2)`
+      }
+    }
+  </script>
+</body>
+</html>
